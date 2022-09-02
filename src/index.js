@@ -26,6 +26,14 @@ class App extends React.Component {
     return <div>Loading . . . . .</div>
   }
 
+  componentDidMount() {
+    console.log('Did mount');
+  }
+
+  componentDidUpdate() {
+    console.log('Did update');
+  }
+
 };
 
 const container = document.getElementById('root');
