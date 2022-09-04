@@ -3,16 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {lat: null, errorMessage: ''};
-    
-    window.navigator.geolocation.getCurrentPosition(
-      position => this.setState({lat: position.coords.latitude}),
-      err => this.setState({errorMessage: err.message})
-    )
-  }
+  state = {lat: null, errorMessage: ''};
 
   render = () => {
     if (this.state.lat && !this.state.errorMessage) {
@@ -28,12 +19,16 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('Did mount');
+
+    window.navigator.geolocation.getCurrentPosition(
+      position => this.setState({lat: position.coords.latitude}),
+      err => this.setState({errorMessage: err.message})
+    )
   }
 
   componentDidUpdate() {
     console.log('Did update');
   }
-
 };
 
 const container = document.getElementById('root');
