@@ -26,10 +26,10 @@ const SeasonDisplay = props => {
 
     console.log(props.lat, new Date().getMonth(), season)
     return(
-        <div>
-            <i className={`position-left massive ${iconName} icon`}/>
+        <div className={`season-display ${season}`}>
+            <i className={`icon-left massive ${iconName} icon`}/>
             <h1>{text}</h1>
-            <i className={`position-right massive ${iconName} icon`}/>
+            <i className={`icon-right massive ${iconName} icon`}/>
         </div>
     );
 };
