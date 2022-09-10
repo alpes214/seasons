@@ -1,7 +1,9 @@
+import './App.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import SeasonDisplay from './SeasonDisplay';
 import Spinner from './Spinner';
+
 
 class App extends React.Component {
 
